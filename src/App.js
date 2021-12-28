@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { useSelector } from "react-redux";
+import LandingPage from "./components/pages/LandingPage";
+import { Route, Switch } from "react-router-dom";
+import ProductPage from "./components/pages/ProductPage";
+import CartPage from "./components/pages/CartPage";
 
 function App() {
+  const wishList = useSelector((state) => state.shoppingReducer.wishList);
+  const cartList = useSelector((state) => state.shoppingReducer.cart);
+  const products = useSelector((state) => state.shoppingReducer.products);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar {...{ wishList, cartList, products }} />
+      <Switch>
+        <Route path="/" exact>
+          <LandingPage {...{ products }} />
+        </Route>
+        <Route path="/product/:id">
+          <ProductPage {...{ products }} />
+        </Route>
+        <Route path="/cart">
+          <CartPage {...{ cartList }} />
+        </Route>
+      </Switch>
     </div>
   );
 }
