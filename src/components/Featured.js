@@ -24,14 +24,18 @@ function Featured({ products }) {
 
 const styles = css`
   padding: 50px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   .product-list {
     margin-top: 50px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2%;
+  }
+  @media (max-width: 768px) {
   }
 `;
 

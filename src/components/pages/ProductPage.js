@@ -56,12 +56,14 @@ function ProductPage({ products }) {
 const styles = css`
   padding: 50px;
   display: flex;
+  flex-wrap: wrap;
   .image img {
+    width: 100%;
     max-height: 500px;
   }
 
   .description {
-    padding: 20px 50px;
+    padding: 20px 10px;
     // background-color: rgba(0, 0, 0, 0.2);
     flex-grow: 1;
     display: flex;

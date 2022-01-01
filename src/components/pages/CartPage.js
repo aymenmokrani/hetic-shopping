@@ -114,6 +114,25 @@ const styles = css`
       margin-top: 50px;
     }
   }
+  @media (max-width: 767px) {
+    padding: 20px;
+    .content-header,
+    .content-row {
+      > div {
+        width: 18%;
+      }
+      .cart-total {
+        flex-grow: 1;
+        text-align: center !important;
+      }
+      .cart-remove {
+        flex-grow: 1;
+      }
+    }
+    .cart-subtotal {
+      display: none;
+    }
+  }
 `;
 
 export default CartPage;

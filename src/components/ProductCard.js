@@ -133,6 +133,7 @@ const styles = css`
     }
   }
 }
+
 `;
 
 export default ProductCard;

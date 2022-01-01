@@ -5,6 +5,7 @@ import LandingPage from "./components/pages/LandingPage";
 import { Route, Switch } from "react-router-dom";
 import ProductPage from "./components/pages/ProductPage";
 import CartPage from "./components/pages/CartPage";
+import PaymentPage from "./components/pages/PaymentPage";
 
 function App() {
   const wishList = useSelector((state) => state.shoppingReducer.wishList);
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/cart">
           <CartPage {...{ cartList }} />
+        </Route>
+        <Route path="/payment">
+          <PaymentPage />
         </Route>
       </Switch>
     </div>

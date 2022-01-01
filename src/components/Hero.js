@@ -46,6 +46,9 @@ const styles = css`
       font-size: 16px;
     }
   }
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export default Hero;
